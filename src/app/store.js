@@ -1,8 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import todoReducer from "../store/slices/cartSlice";
-// export const store = configureStore({
-//   reducer: todoReducer,
-// });
 
 // store.js
 import { configureStore } from "@reduxjs/toolkit";
