@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const Login = () => {
   return (
     <div className="w-100 position-absolute top-50 start-50 translate-middle">
-      {/* <h2>Please log in to view restricted content.</h2> */}
       <div className="align ">
         <div className="grid">
           <form

@@ -10,7 +10,7 @@ import { AddedCarts } from "./AddedCarts";
 export const CartData = () => {
   const [totalNoOfCart, setTotalNoOfCart] = useState(0);
   let dispatch = useDispatch;
-  const cart = useSelector((state) => state.cart); // Accessing the 'cart' slice of the state
+  const cart = useSelector((state) => state.cart);
   const handleRemoveItem = () => {
     dispatch(removeCart(cart.id));
   };
@@ -28,32 +28,6 @@ export const CartData = () => {
             </h2>
             <div className="d-flex flex-wrap justify-content-center align-items-center my-2">
               {cart.map((item) => (
-                // <div className="w-[300px] rounded-md border m-4">
-                //   <img
-                //     src={item.image}
-                //     alt="Laptop"
-                //     className="h-[180px] w-full rounded-t-md p-2 object-contain"
-                //   />
-                //   <div className="px-4 py-2">
-                //     <div className="my-2 text-sm text-gray-600">
-                //       {item.title.substr(0, 30)}...
-                //     </div>
-                //     <span className="py-1 px-2 bi bi-star-fill text-white bg-success rounded-sm">
-                //       {item.rating.rate}
-                //     </span>{" "}
-                //     Rating and {item.rating.count} Reviews.
-                //     <div className="my-2">
-                //       Description: {item.description.substr(0, 50)}
-                //     </div>
-                //     <button
-                //       type="button"
-                //       className="my-2 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                //       onClick={handleRemoveItem}
-                //     >
-                //       Remove from cart
-                //     </button>
-                //   </div>
-                // </div>
                 <AddedCarts cartItem={item} />
               ))}
             </div>
@@ -63,6 +37,7 @@ export const CartData = () => {
               style={{
                 position: "fixed",
                 right: "100px",
+                // zIndex: "3",
               }}
             >
               <h2 className="text-center text-uppercase mt-3 text-orange-600">
@@ -74,7 +49,7 @@ export const CartData = () => {
                   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
                 }}
               >
-                <div>
+                <div className="z-3">
                   <h4>Total Item: {cart.length} </h4>
                   <h4>Total Amount: ${totalNoOfCart} </h4>
                   <Link to="/">
